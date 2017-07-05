@@ -1,0 +1,9 @@
+_vendor
+.vendor
+vendor
+bin/cobbler2dnsmasq
+
+tmp/
+
+### Other ###
+.idea/
