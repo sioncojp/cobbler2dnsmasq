@@ -1,7 +1,8 @@
 # cobbler2dnsmasq
 
 ## Overview
-* cobblerのprofileから`/etc/cobbler/dnsmasq.template`を作る
+* cobblerのprofileから`/etc/cobbler/dnsmasq.template`を作ります
+* MACアドレスは一番最後に書かれてるものを取ってきます
 
 ## Test Run
 

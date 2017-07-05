@@ -1,0 +1,4 @@
+# sample
+{{- range .Info }}
+dhcp-host={{ .MACAddress }},{{ .HostName}},{{ .IP }},infinite
+{{- end }}

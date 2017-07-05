@@ -1,0 +1,11 @@
+template_file = "example/dnsmasq.template.tmpl"
+cobbler_dir = "example/cobbler_dir"
+output = "tmp/dnsmasq.template"
+
+mac_regexp = "[A-Za-z0-9].:[A-Za-z0-9].:[A-Za-z0-9].:[A-Za-z0-9].:[A-Za-z0-9].:[A-Za-z0-9]."
+hostname_regexp = "\\S*\\.example\\.\\S*"
+ip_regexp = "192\\.168\\.0.[0-9]+"
+ignore_ips = [
+  "192.168.0.0",
+  "192.168.0.254",
+]
