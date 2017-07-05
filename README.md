@@ -1,8 +1,7 @@
 # cobbler2dnsmasq
 
 ## Overview
-* Create `/etc/cobbler/dnsmasq.template` from cobbler profiles
-* After creating, run command `cobbler sync`
+* cobblerのprofileから`/etc/cobbler/dnsmasq.template`を作る
 
 ## Test Run
 

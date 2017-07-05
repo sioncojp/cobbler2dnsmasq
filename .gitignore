@@ -3,7 +3,10 @@ _vendor
 vendor
 bin/cobbler2dnsmasq
 
-tmp/
+tmp/*
 
 ### Other ###
 .idea/
+
+### .gitkeep ###
+!.gitkeep
