@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"regexp"
+	"strings"
 )
 
 // GetAllKsFilename ...ksファイルの名前を抽出
@@ -85,7 +86,8 @@ func (h *Host) GetInfo() error {
 		if len(Hostname) == 0 {
 			break
 		} else {
-			i.HostName = Hostname[0]
+			// 抽出したホスト名のドメイン部分を削除
+			i.HostName = strings.Split(Hostname[0], ".")[0]
 		}
 
 		// 指定されたIPを取得し、除外IPのチェックをする。そもそもIPがなければ終了
