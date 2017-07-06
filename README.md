@@ -8,6 +8,8 @@
 
 ```shell
 $ git clone github.com/sioncojp/cobbler2dnsmasq
-$ cp -rp tmp/`cobbler profiles directory`/
+$ dep ensure
 $ make run
+
+# check tmp/dnsmasq.template
 ```

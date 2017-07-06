@@ -2,7 +2,15 @@ REVISION := $(shell git describe --always)
 DATE := $(shell date +%Y-%m-%dT%H:%M:%S%z)
 LDFLAGS	:= -ldflags="-X \"main.Revision=$(REVISION)\" -X \"main.BuildDate=${DATE}\""
 
-.PHONY: build deps clean run
+.PHONY: build-cross dist build deps clean run
+
+build-cross:
+	GOOS=linux GOARCH=amd64 go build -o bin/c2d-linux-amd64 $(LDFLAGS) cmd/c2d/*.go
+	GOOS=darwin GOARCH=amd64 go build -o bin/c2d-darwin-amd64 $(LDFLAGS) cmd/c2d/*.go
+
+dist: build-cross
+	cd bin && tar zcvf c2d-linux-amd64.tar.gz c2d-linux-amd64 && rm -f c2d-linux-amd64
+	cd bin && tar zcvf c2d-darwin-amd64.tar.gz c2d-darwin-amd64 && rm -f c2d-darwin-amd64
 
 build:
 	 go build -o bin/c2d $(LDFLAGS) cmd/c2d/*.go
