@@ -1,14 +1,16 @@
 # cobbler2dnsmasq
 
 ## Overview
-* cobblerのprofileから`/etc/cobbler/dnsmasq.template`を作ります
-* MACアドレスは一番最後に書かれてるものを取ってきます
+* cobblerのprofileから下記を読み取って`/etc/cobbler/dnsmasq.template`を作ります
+  * 一番最後のMACアドレス
+  * 正規表現に引っかかった+ignore_IPを除外したIPアドレス
+  * 正規表現に引っかかったホスト名
 
 ## Test Run
 
 ```shell
 $ git clone github.com/sioncojp/cobbler2dnsmasq
-$ dep ensure
+$ make deps
 $ make run
 
 ```
